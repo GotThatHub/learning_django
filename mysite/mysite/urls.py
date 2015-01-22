@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+admin.autodiscover()
 import views
 
 urlpatterns = patterns('',
@@ -12,5 +13,7 @@ urlpatterns = patterns('',
     url(r'^$', views.home),
     url(r'^time/$', views.current_datetime),
     url(r'^time/plus/(\d{1,2})/$', views.hours_ahead),
-    url(r'^antigravity/$', views.test_anti)
+    url(r'^antigravity/$', views.test_anti),
+    url(r'^my_test/$', views.my_test),
+    url(r'^admin/', include(admin.site.urls)),
 )
